@@ -1,0 +1,119 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+<div class="whole">
+Welcome {{UserName}}!
+<button type="submit" (click)="add()" style="background-color: black;color: blanchedalmond;">Edit Profile</button>
+<div *ngIf="addclick==1">
+    <form style="border-width: 2px;width: max-content;height: max-content;">
+        <table>
+                <!-- <tr>
+                        <td>UserId</td>
+                        <td><input type="number" name="userid" value={{UserName}}></td>
+                    </tr> -->
+                  
+                <tr>
+                 <td>UserName</td>
+                <td><input type="text" name="name" [(ngModel)]="item.name"></td>
+                    </tr>
+                    <tr>	
+                        
+                 <td><label for="email1" > <b> Email ID </b> </label> </td>
+                <input type ="text" #email1="ngModel" placeholder="Enter Email" name="emailID" [(ngModel)]="item.emailID" required email /> <br>
+                                      <!-- <div  *ngIf="email1.errors && (email1.dirty || email1.touched)">
+                                          <p  *ngIf="email1.errors.required"> * Email ID is required </p> 
+                                          <p  *ngIf="email1.errors.email"> * Email ID is not valid </p>
+                                        </div>
+                                     -->
+                </tr>
+                        
+                    <tr>
+                        <td>Mobilenumber</td>
+                        <td><input type="number" name="mobileNum"  [(ngModel)]="item.mobilenumber"></td>
+                    </tr>
+                    <tr>
+                            <td>  PassWord </td>
+                            <td><input type ="password"  #password="ngModel" placeholder="Enter Password" name="pwd" [(ngModel)]="item.password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/> </td>
+                            <!-- <div  *ngIf="password.errors && (password.dirty || password.touched)">
+                                <p  *ngIf="password.errors.required"> * Password is required </p> 
+                                <p  *ngIf="password.errors.pattern"> PassWord Pattern doesnot match </p>
+                              </div> -->
+                    </tr>
+                
+                    <tr>
+                        <td>Active</td>
+                        <td><input type="checkbox" name="act" [(ngModel)]="item.active"></td>
+                    </tr>
+                    
+   
+   <tr><td><button type="submit" (click)="Update()" style="background-color: black;color: blanchedalmond;width:400px;">Edit</button></td></tr>
+   </table>
+   </form>
+</div>
+<button type="submit" (click)="UserCurTrainings()" style="background-color: black;color: blanchedalmond;"> Current Trainings</button>
+<form style="border-width: 2px;width: max-content;height: max-content;">
+
+<table>
+    <thead>
+            <tr>
+                <th>Training-ID</th>
+                <th>User ID</th>
+                <th>Mentor ID</th>
+                <th>Skill ID</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Timeslot</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Rating</th>
+                
+            </tr>
+        </thead>
+    <tbody *ngFor="let items of lists">
+      <tr>
+        <td>
+        {{items.trainingId}}  
+        </td>
+        <td>
+            {{items.userId}}
+          </td>
+          <td>
+              {{items.mentorId}}
+            </td>
+            <td>
+                {{items.skillId}}
+              </td>
+              <td>
+                {{items.startDate}}
+              </td>
+              <td>
+                {{items.endDate}}
+              </td>
+              <td>
+                {{items.timeslot}}
+              </td>
+              <td>
+                {{items.status}}
+              </td>
+              <td>
+                {{items.progress}}
+              </td>
+              <td>
+                {{items.rating}}
+              </td>
+
+</tr>
+</tbody>
+</table>
+</form>
+<!-- {{lists|json}} -->
+</div>
+</body>
+</html>

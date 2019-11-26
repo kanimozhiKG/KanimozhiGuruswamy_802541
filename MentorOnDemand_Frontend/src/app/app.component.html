@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  
+  ul
+  {
+  border-radius: 25px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  
+  }
+
+  li
+  {
+  float: left;
+  }
+
+  li a, .dropbtn
+  {
+  border-radius: 25px;
+  display: inline-block;
+  color: white;
+  font-weight: bold; 
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  background-color: black;
+  
+  }
+
+  li a:hover, .dropdown:hover .dropbtn
+  {
+   background-color: white;
+   color: black;
+  }
+
+  li.dropdown 
+  {
+  display: inline-block;
+  }
+
+  .dropdown-content
+  {
+  border-radius: 25px;
+  display: none;
+  position: absolute;
+  background-color:black;
+  min-width: 80px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 4px;
+
+  }
+
+  .dropdown-content a 
+  {
+  border-radius: 25px;
+  border-color:black;
+  background-color: black;
+  color:white;
+  padding: 12px 9px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  }
+
+  .dropdown-content a:hover 
+  {
+  border-radius: 25px;
+  background-color: white	;
+  color: black
+  }
+
+  .dropdown:hover .dropdown-content 
+  {
+  display: block;
+  }
+  
+  .active 
+  {
+  background-color:burlywood;
+  }
+  h1 { 
+  color:black;
+  text-shadow: 
+    1px 1px 8px white, 
+     
+    1.5em .4em 10vw #A569BD; 
+  font-size: 3vw;
+  }
+  body {
+    margin-top: -16px;
+  /* background-image: url("./assets/images.png"); */
+  font-size: 20px;
+  font-family:Poppins;
+  height: 115vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 8px
+  } 
+
+
+
+  </style>
+
+ </head>
+ <body>
+ <header>
+ <h1 style="margin-left: 25% ;text-size-adjust: 20;">LEARN</h1>
+ </header>
+  <ul style="background-color:black;">
+  <li><a routerLink="home">Home </a></li>
+  <!-- <li><a routerLink="user">User</a></li>
+  <li><a routerLink="mentor">Mentor</a></li> -->
+  <!-- <li><a href="/search">Search</a></li> -->
+  <li><a routerLink="search">Search</a></li>
+  <li *ngIf="setok()==0" class="dropdown" style="float:right">
+    <a href="javascript:void(0)" class="dropbtn">Sign In</a>
+    <div class="dropdown-content">
+      <a routerLink="usersignup">User</a>
+      <a routerLink="msignup">Mentor</a>
+      <!-- <a routerLink="adminlogin">Admin</a> -->
+    </div>
+  </li>
+  <li>
+      <div *ngIf="setok()!=0">
+        <a (click)="logout()">logout</a></div>
+  </li>
+  </ul>
+  <!-- <div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" style="width: 273px;margin-top: 0px;margin-right: -29px;margin-left: 14px;" placeholder="What are you looking for?">
+       <button type="submit" class="searchButton" style="margin-left: 32px">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div> -->
+ </body>
+</html>
+<router-outlet></router-outlet>

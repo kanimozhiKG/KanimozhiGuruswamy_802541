@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  margin-top: -424px;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+<body>
+    <div class="active">
+      Welcome admin!
+<ul>
+
+  <!-- <li><a class="active" href="#home">Home</a></li> -->
+  <li><a routerLink="adminuser">User</a></li>
+  <li><a routerLink="adminmentor">Mentor</a></li>
+  <li><a routerLink="admintraining">Training</a></li>
+  <li><a routerLink="admintechnology">Technology</a></li>
+  <li><a routerLink="adminpayment">Payment</a></li>
+</ul>
+</div>
+</body>
+</html>
+<router-outlet></router-outlet>

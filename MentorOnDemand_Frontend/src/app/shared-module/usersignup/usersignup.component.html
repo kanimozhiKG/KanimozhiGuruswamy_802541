@@ -1,0 +1,64 @@
+<html>
+		<head>
+		<title>Creative Colorlib SignUp Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!-- Custom Theme files -->
+		<!-- <link href="mentsignup.component.css" rel="stylesheet" type="text/css" media="all" /> -->
+		<!-- //Custom Theme files -->
+		<!-- web font -->
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+		<!-- //web font -->
+		</head>
+		<body>
+			<!-- main -->
+			<div class="main-w3layouts wrapper">
+				<h1>User SignUp Form</h1>
+				<div class="main-agileinfo">
+					<div class="agileits-top">
+							<table>
+									<tr>
+										<td>UserName</td>
+										<td><input type="text" name="name" [(ngModel)]="item.name"></td>
+									</tr>
+									<tr>	
+										
+											<td> Email ID </td>
+													 <td> <input type ="text" #email="ngModel" name="emailID" [(ngModel)]="item.emailID" required email /> </td>
+													 <div  *ngIf="email.errors && (email.dirty || email.touched)">
+															<p  *ngIf="email.errors.required"> * Email is required </p> 
+															<p  *ngIf="email.errors.email"> * Email is not valid </p> 
+														
+														  </div>
+														
+										</tr>
+										
+									<tr>
+										<td>Mobilenumber</td>
+										<td><input type="number" name="mobileNum" [(ngModel)]="item.mobilenumber"></td>
+									</tr>
+									<tr>
+											<td>  PassWord </td>
+											<td><input type ="password"  #password="ngModel" name="pwd" [(ngModel)]="item.password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/> </td><br>
+											<div  *ngIf="password.errors && (password.dirty || password.touched)">
+												<p  *ngIf="password.errors.required"> * Password is required </p> 
+												<p  *ngIf="password.errors.pattern"> PassWord Pattern doesnot match </p>
+											  </div>
+									</tr>
+								
+									<tr>
+										<td>Active</td>
+										<td><input type="checkbox" name="act" [(ngModel)]="item.active"></td>
+									</tr>
+									
+									
+									
+													<button (click) =Add() >Register</button>
+									Already a registered user??<a href="login"><button>LOGIN</button></a>
+									</table>
+									</div>
+						</div>
+						</div>
+						</body>
+						</html>

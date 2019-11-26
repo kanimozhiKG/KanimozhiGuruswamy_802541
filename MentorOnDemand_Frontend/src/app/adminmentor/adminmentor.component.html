@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+<form style="border-width: 2px;width: max-content;height: max-content;">
+<table>
+		<thead>
+							 <tr>
+								 <th>ID</th>
+								 <th>Name</th>
+								 <th>Email</th>
+								 <th>mobile</th>
+								 <th>Skills</th>
+								 <th>Experience</th>
+								 <th>Timeslot</th>
+								 <th>Block</th>
+								 <th>UnBlock</th>
+								 <th>Delete</th>
+							 </tr>
+						 </thead>
+	   
+	   <tbody *ngFor="let item of list">
+		 <tr>
+		   <td>
+			 {{item.mentorId}}
+		   </td>
+		   <td>
+			   {{item.mentorName}}
+			 </td>
+			 <td>
+				 {{item.mEmailID}}
+			   </td>
+			   <td>
+				   {{item.mobilenumber}}
+				 </td>
+				 <td>
+						{{item.skills}}
+					  </td>
+					 
+				 <td>
+					 {{item.experiance}}
+				 </td>
+				 <td>
+						{{item.timeslot}}
+					</td>
+					<td> <button type="submit" (click)="Block(item.mentorId)">Block</button></td>
+					<td> <button type="submit" (click)="UnBlock(item.mentorId)">UnBlock</button></td>
+					<td> <button type="submit" (click)="Delete(item.mentorId)">Delete</button></td>
+				 </tr>
+	 
+	   </tbody>
+	 </table>
+	 </form>
+	 </html>
+	

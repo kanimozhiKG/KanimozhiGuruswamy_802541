@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+<form style="border-width: 2px;width: max-content;height: max-content;">
+    <table>
+		<thead>
+							 <tr>
+								 <th>SkillId</th>
+								 <th>SkillName</th>
+                                 <th>TableOfContent</th>
+                                 <th>Fee</th>
+								 <th>Duration</th>
+								 
+							 </tr>
+                         </thead>
+       
+	   <tbody *ngFor="let item of list">
+		 <tr>
+		   <td>
+			 {{item.skillId}}
+		   </td>
+		   <td>
+			   {{item.skillName}}
+			 </td>
+			 <td>
+				 {{item.tableOfContent}}
+			   </td>
+			   <td>
+				   {{item.fee}}
+				 </td>
+				 <td>
+					 {{item.duration}}
+				 </td>
+				                            
+					<!-- <td> <button type="submit" (click)="Block(item.userId)">Block</button></td>
+					<td> <button type="submit" (click)="Delete(item.userId)">Delete</button></td> -->
+				 </tr>
+	 
+	   </tbody>
+	 </table>
+	 <button type="submit" (click)="add()">Add</button>
+	 <div *ngIf="addclick==1">
+		 <table>
+			 <tr>
+		 <td>SkillName</td>
+	<td> <input type="text" name="name" [(ngModel)]="item.skillName"></td></tr>
+		<tr><td>TOC:</td>
+	<td><input type="text" name="toc" [(ngModel)]="item.tableOfContent"></td></tr>
+	<tr><td>Fee:</td>
+	<td><input type="number" name="fee" [(ngModel)]="item.fee"></td></tr>
+	<tr><td>Duration:</td>
+	<td><input type="number" name="dur" [(ngModel)]="item.duration"></td></tr>
+	
+	<tr><td><button type="submit" (click)="AddTechnology()">Add</button></td></tr>
+	</table>
+</div>
+     </form>
+	 </html>
+ 
